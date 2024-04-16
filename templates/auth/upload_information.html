@@ -1,0 +1,53 @@
+<!-- uploaded_information.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Information</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Uploaded Information</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Kunde</th>
+      <th scope="col">Fertigungsauftrag</th>
+      <th scope="col">Name</th>
+      <th scope="col">Anzahl</th>
+      <th scope="col">Identifikation (Nr.) </th>
+      <th scope="col">Zeichnung (Nr)</th>
+      <th scope="col">Mitarbeiter</th>
+      <th scope="col">Werkzeug</th>
+      <th scope="col">Arbeitsschritt</th>
+      <th scope="col">Arbeitsplatz</th>
+      <th scope="col"> Das aktuelle Datum </th>
+      <th scope="col">Gesamtarbeitszeit</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for info in uploaded_information %}
+            <tr>
+                <td>{{ info.customer }}</td>
+                <td>{{ info.production_order }}</td>
+                <td>{{ info.name }}</td>
+                <td>{{ info.number }}</td>
+                <td>{{ info.IDs }}</td>
+                <td>{{ info.design }}</td>
+                <td>{{ info.employee }}</td>
+                <td>{{ info.tool }}</td>
+                <td>{{ info.work_step }}</td>
+                <td>{{ info.workplace }}</td>
+                <td>{{ info.current_date }}</td>
+                <td>{{ info.total_time }}</td>
+                <!-- Add more table cells for other fields -->
+            </tr>
+            {% endfor %}
+    
+  </tbody>
+</table>
+</body>
+</html>
